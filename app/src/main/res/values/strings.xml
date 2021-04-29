@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">LikingApp</string>
+
+    <!-- label -->
+    <string name="password">Senha</string>
+    <string name="login">Login</string>
+    <string name="name">Nome</string>
+    <string name="last_name">Sobrenome</string>
+    <string name="do_registry">Registre-se</string>
+    <string name="register_access">acessar cadastro</string>
+    <string name="gallery_access">acessar galeria</string>
+    <string name="register_data">Dados Cadastrais</string>
+    <string name="avatar_label">Avatar</string>
+    <string name="birth_date">Data de Nascimento</string>
+    <string name="telephone">Telefone</string>
+    <string name="cpf">CPF</string>
+    <string name="e_mail">E-mail</string>
+    <string name="birth_date_hint">__-__-____</string>
+    <string name="telephone_hint">(__) _____-____</string>
+    <string name="cpf_hint">___.___.___-__</string>
+    <string name="register_user">Cadastrar Usuário</string>
+    <string name="confirm">confirmar</string>
+
+    <!-- image -->
+    <string name="facebook_icon_description">facebook icon</string>
+    <string name="logo_description">logo</string>
+    <string name="gmail_icon_description">gmail icon</string>
+
+</resources>

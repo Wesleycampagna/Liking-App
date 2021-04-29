@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_color">#FFFFFF</color>
+    <color name="second_color">#352A2C4D</color>
+    <color name="label_color">#2A2C4D</color>
+    <color name="edit_text_color">#50DDDDDD</color>
+    <color name="edit_text_color_hint">#AAAAAA</color>
+    <color name="background_secondary_color">#919191</color>
+    <color name="translucid_background_secondary_color">#70919191</color>
+    <color name="translucid">#00000000</color>
+    <color name="button_color">#60b5ff</color>
+    <color name="button_color_pressed">#389FFA</color>
+    <color name="shadow">#DDDDDD</color>
+</resources>
