@@ -20,6 +20,11 @@
     <string name="cpf_hint">___.___.___-__</string>
     <string name="register_user">Cadastrar Usuário</string>
     <string name="confirm">confirmar</string>
+    <string name="label_info_login_password">login: %s senha: %s</string>
+    <string name="label_welcome_user">Olá, %s</string>
+    <string name="select">selecionar</string>
+    <string name="invalid_email">O email não pode ser vazio!</string>
+    <string name="successfuly_save_data">E-mail registrado!</string>
 
     <!-- image -->
     <string name="facebook_icon_description">facebook icon</string>

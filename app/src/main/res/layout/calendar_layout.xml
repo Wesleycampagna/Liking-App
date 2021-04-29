@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="20dp"
-    android:visibility="gone"
-    android:elevation="5dp"
-    android:id="@+id/calendar_layout"
-    android:background="@color/translucid_background_secondary_color">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <CalendarView
+    <data />
+
+    <LinearLayout
+        android:id="@+id/calendar_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_calendar"/>
+        android:layout_height="match_parent"
+        android:background="@color/translucid_background_secondary_color"
+        android:elevation="5dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:visibility="gone">
 
-</LinearLayout>
+        <CalendarView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_calendar" />
+
+        <Button
+            android:id="@+id/button_select_date"
+            style="@style/button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_button"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/select" />
+
+    </LinearLayout>
+
+</layout>

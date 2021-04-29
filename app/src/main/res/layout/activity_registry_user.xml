@@ -1,300 +1,312 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/primary_color"
-    android:orientation="vertical"
-    tools:context=".RegistryUser">
+    tools:context=".model_view_controller.registry_user.RegistryUserActivity">
 
-    <LinearLayout
+    <data />
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_height="match_parent"
+        android:background="@color/primary_color"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:contentDescription="@string/logo_description"
-            android:src="@mipmap/logo_foreground" />
-
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                style="@style/greatest_label_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="11dp"
-                android:text="@string/register_user" />
+            android:layout_height="match_parent">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:orientation="vertical">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="14dp"
-                    android:alpha="0.3"
-                    android:elevation="0dp"
-                    android:innerRadius="0dp"
-                    android:shape="ring"
-                    android:thicknessRatio="1.9"
-                    app:cardBackgroundColor="@color/background_secondary_color"
-                    app:cardCornerRadius="50dp"
-                    app:cardElevation="0dp">
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="@string/logo_description"
+                    android:src="@mipmap/logo_foreground" />
 
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center"
-                        android:contentDescription="@string/logo_description"
-                        android:src="@drawable/ic_baseline_person_24" />
-
-                </androidx.cardview.widget.CardView>
-
-                <TextView
-                    style="@style/label_style"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="@string/avatar_label" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:baselineAligned="false"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    style="@style/label_style"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/name" />
-
-                <EditText
-                    style="@style/edit_text_style"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_marginEnd="10dp"
-                    android:autofillHints=""
-                    android:hint="@string/name"
-                    android:inputType="text" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    style="@style/label_style"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="@string/last_name" />
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                <EditText
-                    style="@style/edit_text_style"
+                    <TextView
+                        style="@style/greatest_label_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="11dp"
+                        android:text="@string/register_user" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="14dp"
+                            android:alpha="0.3"
+                            android:elevation="0dp"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            android:thicknessRatio="1.9"
+                            app:cardBackgroundColor="@color/background_secondary_color"
+                            app:cardCornerRadius="50dp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/logo_description"
+                                android:src="@drawable/ic_baseline_person_24" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            style="@style/label_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="@string/avatar_label" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:autofillHints=""
-                    android:hint="@string/last_name"
-                    android:inputType="text" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:baselineAligned="false"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    style="@style/label_style"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/birth_date" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="43dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="25dp"
+                    android:baselineAligned="false"
                     android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/label_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/name" />
+
+                        <EditText
+                            style="@style/edit_text_style"
+                            android:layout_width="match_parent"
+                            android:layout_marginEnd="10dp"
+                            android:autofillHints=""
+                            android:hint="@string/name"
+                            android:inputType="text" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/label_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="@string/last_name" />
+
+                        <EditText
+                            style="@style/edit_text_style"
+                            android:layout_width="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:autofillHints=""
+                            android:hint="@string/last_name"
+                            android:inputType="text" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/label_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/birth_date" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="43dp"
+                            android:layout_marginEnd="10dp"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                style="@style/edit_text_style"
+                                android:layout_width="match_parent"
+                                android:autofillHints=""
+                                android:hint="@string/birth_date_hint"
+                                android:inputType="date" />
+
+                            <ImageView
+                                android:layout_width="34dp"
+                                android:layout_height="34dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:contentDescription="@string/logo_description"
+                                android:paddingStart="5dp"
+                                android:paddingEnd="5dp"
+                                android:src="@mipmap/ic_calendar" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/label_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="@string/telephone" />
+
+                        <EditText
+                            style="@style/edit_text_style"
+                            android:layout_width="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:autofillHints=""
+                            android:hint="@string/telephone_hint"
+                            android:inputType="phone" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/label_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cpf" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            style="@style/edit_text_style"
+                            android:layout_width="0dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:autofillHints=""
+                            android:hint="@string/cpf_hint"
+                            android:inputType="text" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="43dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            tools:ignore="UselessLeaf" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/label_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e_mail" />
 
                     <EditText
                         style="@style/edit_text_style"
                         android:layout_width="match_parent"
                         android:autofillHints=""
-                        android:hint="@string/birth_date_hint"
-                        android:inputType="date" />
+                        android:hint="@string/e_mail"
+                        android:inputType="text" />
 
-                    <ImageView
-                        android:layout_width="34dp"
-                        android:layout_height="34dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true"
-                        android:contentDescription="@string/logo_description"
-                        android:paddingStart="5dp"
-                        android:paddingEnd="5dp"
-                        android:src="@mipmap/ic_calendar" />
-
-                </RelativeLayout>
+                </LinearLayout>
 
             </LinearLayout>
 
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@drawable/corner_radius_at_top"
+            android:gravity="bottom"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/rounded_button_shadow"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <TextView
-                    style="@style/label_style"
+                    style="@style/button_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="@string/telephone" />
-
-                <EditText
-                    style="@style/edit_text_style"
-                    android:layout_width="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:autofillHints=""
-                    android:hint="@string/telephone_hint"
-                    android:inputType="phone" />
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/register_access" />
 
             </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="4dp"
-            android:orientation="vertical">
+        <include layout="@layout/calendar_layout" />
 
-            <TextView
-                style="@style/label_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/cpf" />
+    </RelativeLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:orientation="horizontal">
-
-                <EditText
-                    style="@style/edit_text_style"
-                    android:layout_width="0dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
-                    android:autofillHints=""
-                    android:hint="@string/cpf_hint"
-                    android:inputType="text" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="43dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="1"
-                    tools:ignore="UselessLeaf" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="4dp"
-            android:orientation="vertical">
-
-            <TextView
-                style="@style/label_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/e_mail" />
-
-            <EditText
-                style="@style/edit_text_style"
-                android:layout_width="match_parent"
-                android:autofillHints=""
-                android:hint="@string/e_mail"
-                android:inputType="text" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/corner_radius_at_top"
-        android:gravity="bottom"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_margin="20dp"
-            android:background="@drawable/rounded_button"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                style="@style/button_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/register_access" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <include layout="@layout/calendar_layout" />
-
-</RelativeLayout>
+</layout>

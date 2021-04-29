@@ -1,2 +1,5 @@
 include ':app'
 rootProject.name = "LikingApp"
+
+include ':sprinkles-inti-library-release'
+include ':app'
