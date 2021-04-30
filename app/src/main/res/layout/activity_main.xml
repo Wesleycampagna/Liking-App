@@ -18,7 +18,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/button_color"
+                android:background="@color/button_color_one"
                 android:visibility="gone">
 
 
@@ -63,6 +63,7 @@
                             android:orientation="horizontal">
 
                             <EditText
+                                android:id="@+id/edit_text_name"
                                 style="@style/edit_text_style"
                                 android:layout_width="0dp"
                                 android:layout_marginEnd="10dp"
@@ -73,6 +74,7 @@
                                 android:inputType="textCapWords" />
 
                             <EditText
+                                android:id="@+id/edit_text_last_name"
                                 style="@style/edit_text_style"
                                 android:layout_width="0dp"
                                 android:layout_marginStart="10dp"
@@ -100,12 +102,12 @@
                             android:text="@string/login" />
 
                         <EditText
+                            android:id="@+id/login"
                             style="@style/edit_text_style"
                             android:layout_width="match_parent"
                             android:autofillHints=""
                             android:hint="@string/login"
                             android:inputType="text" />
-
 
                     </LinearLayout>
 
@@ -123,6 +125,7 @@
                             android:text="@string/password" />
 
                         <EditText
+                            android:id="@+id/password"
                             style="@style/edit_text_style"
                             android:layout_width="match_parent"
                             android:autofillHints=""
@@ -130,6 +133,16 @@
                             android:inputType="textPassword" />
 
                     </LinearLayout>
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/save_credentials"
+                        style="@style/label_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="8dp"
+                        android:buttonTint="@color/label_color"
+                        android:text="@string/save_credentials" />
+
 
                 </LinearLayout>
 

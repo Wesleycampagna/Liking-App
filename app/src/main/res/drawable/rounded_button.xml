@@ -6,7 +6,7 @@
         android:bottom="3dp"
         android:right="1dp">
         <shape android:shape="rectangle">
-            <solid android:color="@color/button_color" />
+            <solid android:color="@color/button_color_one" />
             <corners android:radius="50dp" />
         </shape>
     </item>

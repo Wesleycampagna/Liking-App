@@ -20,6 +20,8 @@ public class AuthSocialMediaEmailActivity extends BaseActivity implements AuthSo
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         presenter = new AuthSocialMediaEmailPresenter(this);
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.background_secondary_color));
+        getWindow().setStatusBarColor(getResources().getColor(R.color.background_secondary_color));
     }
 
     @Override

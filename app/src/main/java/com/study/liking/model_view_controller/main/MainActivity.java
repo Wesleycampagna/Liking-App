@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -16,6 +15,7 @@ import com.study.liking.databinding.ActivityMainBinding;
 import com.study.liking.model_view_controller.auth_social_media_email.AuthSocialMediaEmailActivity;
 import com.study.liking.model_view_controller.list_component.ListComponentActivity;
 import com.study.liking.model_view_controller.registry_user.RegistryUserActivity;
+import com.study.liking.models.OwnUser;
 import com.study.liking.utils.Constants;
 
 public class MainActivity extends BaseActivity implements MainContract.View {
@@ -26,12 +26,23 @@ public class MainActivity extends BaseActivity implements MainContract.View {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        presenter = new MainPresenter(this);
+        presenter = new MainPresenter(this, this);
+        presenter.init();
     }
 
     @Override
     protected void setContentView() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+    }
+
+    @Override
+    public void loadInterface(OwnUser ownUser) {
+        if (ownUser != null) {
+            binding.saveCredentials.setChecked(ownUser.saveCredentials);
+            binding.editTextName.setText(ownUser.name);
+            binding.editTextLastName.setText(ownUser.lastName);
+            binding.login.setText(ownUser.login);
+        }
     }
 
     @Override
@@ -42,22 +53,43 @@ public class MainActivity extends BaseActivity implements MainContract.View {
             binding.proceedToGmailRegistration.setOnClickListener(v -> MainActivity.this.goToAuthSocialMedia());
     }
 
+    private OwnUser getScreenAtributtes() {
+        OwnUser ownUser = new OwnUser();
+        ownUser.name = binding.editTextName.getText().toString().trim();
+        ownUser.lastName = binding.editTextLastName.getText().toString().trim();
+        ownUser.login = binding.login.getText().toString().trim();
+        ownUser.password = binding.password.getText().toString().trim();
+        ownUser.saveCredentials = binding.saveCredentials.isChecked();
+
+        return ownUser;
+    }
+
     private void goToRegistryUserActivity() {
-        // bundle
-        Intent intent = new Intent(this, RegistryUserActivity.class);
-        intent.putExtra(Constants.Bundle.USER_NAME, "Wesley");
-        intent.putExtra(Constants.Bundle.USER_LOGIN, "login");
-        intent.putExtra(Constants.Bundle.USER_PASSWORD, "password");
-        startActivity(intent);
+        OwnUser ownUser = getScreenAtributtes();
+
+        if (presenter.isValidData(ownUser)) {
+            // bundle
+            Intent intent = new Intent(this, RegistryUserActivity.class);
+            intent.putExtra(Constants.Bundle.USER_NAME, ownUser.name);
+            intent.putExtra(Constants.Bundle.USER_LOGIN, ownUser.login);
+            intent.putExtra(Constants.Bundle.USER_EMAIL, ownUser.email);
+            startActivity(intent);
+        }
+        else showToast(getString(R.string.caught_invalid_input));
     }
 
     private void goToGallery() {
-        Intent intent = new Intent(this, ListComponentActivity.class);
-        // bundle
-        intent.putExtra(Constants.Bundle.USER_NAME, "Wesley");
-        intent.putExtra(Constants.Bundle.USER_LOGIN, "login");
-        intent.putExtra(Constants.Bundle.USER_PASSWORD, "password");
-        startActivity(intent);
+        OwnUser ownUser = getScreenAtributtes();
+
+        if (presenter.isValidData(ownUser)) {
+            Intent intent = new Intent(this, ListComponentActivity.class);
+            // bundle
+            intent.putExtra(Constants.Bundle.USER_NAME, ownUser.name);
+            intent.putExtra(Constants.Bundle.USER_LOGIN, ownUser.login);
+            intent.putExtra(Constants.Bundle.USER_EMAIL, ownUser.email);
+            startActivity(intent);
+        }
+        else showToast(getString(R.string.caught_invalid_input));
     }
 
     private void goToAuthSocialMedia() {
@@ -76,9 +108,9 @@ public class MainActivity extends BaseActivity implements MainContract.View {
     }
 
     @Override
-    public void showToast() {
+    public void showToast(String message) {
         new Handler(Looper.myLooper()).post(() -> {
-            Toast.makeText(this, getString(R.string.successfuly_save_data), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
         });
     }
 }

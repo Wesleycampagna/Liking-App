@@ -8,7 +8,9 @@
     <color name="background_secondary_color">#919191</color>
     <color name="translucid_background_secondary_color">#70919191</color>
     <color name="translucid">#00000000</color>
-    <color name="button_color">#60b5ff</color>
+    <color name="button_color_one">#60b5ff</color>
+    <color name="button_color_two">#CC60b5ff</color>
+    <color name="button_color_three">#AA60b5ff</color>
     <color name="button_color_pressed">#389FFA</color>
     <color name="shadow">#DDDDDD</color>
 </resources>
