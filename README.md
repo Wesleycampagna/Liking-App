@@ -60,7 +60,7 @@ Serão disponibilizados alguns recursos/assets] para uso dentro do projeto. **__
 A primeira tarefa busca aprimorar a capacidade de traduzir um design em um layout organizado e bem formatado. Deseja-se que seja criado ao menos a tela de nome **`1 - Login Up - Register`**
 
 
-#### Tarefa 02 - is needed identity!
+#### Tarefa 02 - Identity is required!
 [see more...]()
 
 Criar a identidade visual do aplicativo e definir o Manifesto.
@@ -108,7 +108,7 @@ Chegou a hora de adaptar o código para MVP (padrão de projeto).
 Chegou a hora de trabalhar com banco de dados. Adicione a biblioteca do sprinkles e salve as informações já obtidas. 
 
 
-#### Tarefa 09 - It's not done yet?!
+#### Tarefa 09 - Is it not done yet?!
 
 [see more...]()
 
@@ -145,7 +145,7 @@ Deve ser inserido um _Calendar_ que seja possível escolher uma data.
 Essa tarefa consiste em adicionar os scripts da biblioteca Retrofit e fazer requisição à uma API publica da Marvel, requisitando assim dados referentes a super heróis do universo Marvel.
 
 
-#### Tarefa 13 - Search and picking 
+#### Tarefa 13 - Search and picking your favorite!
 
 [see more...]()
 
