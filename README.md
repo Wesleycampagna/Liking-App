@@ -16,6 +16,12 @@ Repositório simples para entendimento dos principais conceitos de android alem 
 - Usar o máximo de abstração possível no código;
 - Quebrar o máximo os métodos e em classes que façam sentido, _ex.: singletons, utils, constants e etc_;
 - Escrever em **inglês**;
+- _Commitar_ usando uma ação e a descrição do que foi realizado:
+
+` git commit -m "`**`Add`**`: MainActivity's XML design | login and password's validation"`
+
+Onde as ações podem ser _**Add**_,  _**Up/Update**_,  _**Rf/Refactoring**_,  _**Fix**_ e  _**Rm/Remove**_;
+  
 - _Commitar_ cada tarefa em separado e seguindo os seguintes padrões:
 - Toda tarefa deve possuir o identificador de branch no seguinte modelo:
 
@@ -49,6 +55,10 @@ A UX do projeto pode ser encontrada neste [link](https://xd.adobe.com/view/9c944
 > Assets
 
 Serão disponibilizados alguns recursos/assets] para uso dentro do projeto. **_____________________att_______________**
+
+> Apk
+
+Uma apk para instalação que pode ser utilizada como uma prévia/ajuda na montagem da aplicação.
 
 ### Tarefas ###
 
@@ -145,21 +155,21 @@ Deve ser inserido um _Calendar_ que seja possível escolher uma data.
 Essa tarefa consiste em adicionar os scripts da biblioteca Retrofit e fazer requisição à uma API publica da Marvel, requisitando assim dados referentes a super heróis do universo Marvel.
 
 
-#### Tarefa 13 - Search and picking your favorite!
+#### Tarefa 14 - Search and picking your favorite!
 
 [see more...]()
 
 Deve ser exibida uma lista de acordo com o design da aplicação - [UX](#head1234) - e a lista deve estar de acordo com as informações obtidas da tarefa 13. Deve ser criado o filtro de pesquisa. 
 
 
-#### Tarefa 13 - Make a collection! Love and hate'em!
+#### Tarefa 15 - Make a collection! Love and hate'em!
 
 [see more...]()
 
 Deve ser adicionados os super heróis a uma lista pessoal. Na sua lista pessoal exclua ou abra a exibição detalhada do super herói.
 
 
-#### Tarefa 13 - Wow! Bring the house down!!
+#### Tarefa 16 - Wow! Bring the house down!!
 
 [see more...]()
 
