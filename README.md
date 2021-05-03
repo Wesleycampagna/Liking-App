@@ -1,5 +1,4 @@
 # Liking-App
-================================================================
 
 ### Objetivo
 
@@ -52,74 +51,85 @@ A UX do projeto pode ser encontrada neste [link](https://xd.adobe.com/view/9c944
 Serão disponibilizados alguns recursos/assets] para uso dentro do projeto. **_____________________att_______________**
 
 ### Tarefas ###
-================================================================
 
-#### tarefa 01 - Here we go! First Design. 
+
+#### Tarefa 01 - Here we go! First Design. 
 
 [see more...]()
 
 A primeira tarefa busca aprimorar a capacidade de traduzir um design em um layout organizado e bem formatado. Deseja-se que seja criado ao menos a tela de nome **`1 - Login Up - Register`**
 
-#### tarefa 02 - is needed identity!
+
+#### Tarefa 02 - is needed identity!
 [see more...]()
 
 Criar a identidade visual do aplicativo e definir o Manifesto.
 
-#### tarefa 03 - What do you think about Splash Screen?!
+
+#### Tarefa 03 - What do you think about Splash Screen?!
 
 [see more...]()
 
 Criar a Splash Screem e adicionar no código com _1.5s_ de espera.
 
-#### tarefa 04 - Are you only a designer?! Let's start coding!
+
+#### Tarefa 04 - Are you only a designer?! Let's start coding!
 
 [see more...]()
 
 Construir a lógica, as validações e as conexões em relação ao XML da tela principal.
 
-#### tarefa 05 - Don't leave things behind!
+
+#### Tarefa 05 - Don't leave things behind!
 
 [see more...]()
 
 Essa tarefa consiste em transmitir informações para outra tela usando do recurso Bundle.
 
-#### tarefa 06 - take a time!
+
+#### Tarefa 06 - take a time!
 
 [see more...]()
 
 Essa tarefa consiste em transmitir informações para outra tela usando do recurso Bundle, mas utilizando do empilhamento de activity e ciclo de vida onde a informação deve ser aguardada para retornar para a activity anterior.
 
-#### tarefa 07 - If you did it once, do it again!
+
+#### Tarefa 07 - If you did it once, do it again!
 
 [see more...]()
 
 Chegou a hora de adaptar o código para MVP (padrão de projeto).
 
-#### tarefa 08 - Record all of the things!
+
+#### Tarefa 08 - Record all of the things!
 
 [see more...]()
 
 Chegou a hora de trabalhar com banco de dados. Adicione a biblioteca do sprinkles e salve as informações já obtidas. 
 
-#### tarefa 09 - It's not done yet?!
+
+#### Tarefa 09 - It's not done yet?!
 
 [see more...]()
 
 Termine todos os designs restantes para restar apenas a parte de código. (obs.: Acredito que será repassado os designs, fica a tarefa de adaptar ao estilo existente). Deve ser criada as rotas. 
 
-#### tarefa 10 - Who is your friends?!
+
+#### Tarefa 10 - Who is your friends?!
 
 [see more...]()
 
 Cadastre pessoas no aplicativo, mostre-as na lista geral de pessoas.
 
-#### tarefa 11 - Are you right about your friends?!
+
+#### Tarefa 11 - Are you right about your friends?!
 
 [see more...]()
 
 Edite e exclua pessoas adicionadas.
 
-#### tarefa 12 - picking a date!
+
+#### Tarefa 12 - picking a date!
 
 [see more...]()
 
@@ -127,25 +137,29 @@ Deve ser inserido um _Calendar_ que seja possível escolher uma data.
 
 > this part ahead is not done!
 
-#### tarefa 13 - Wow! Super heroes!
+
+#### Tarefa 13 - Wow! Super heroes!
 
 [see more...]()
 
 Essa tarefa consiste em adicionar os scripts da biblioteca Retrofit e fazer requisição à uma API publica da Marvel, requisitando assim dados referentes a super heróis do universo Marvel.
 
-#### tarefa 13 - Search and picking 
+
+#### Tarefa 13 - Search and picking 
 
 [see more...]()
 
 Deve ser exibida uma lista de acordo com o design da aplicação - [UX](#head1234) - e a lista deve estar de acordo com as informações obtidas da tarefa 13. Deve ser criado o filtro de pesquisa. 
 
-#### tarefa 13 - Make a collection! Love and hate'em!
+
+#### Tarefa 13 - Make a collection! Love and hate'em!
 
 [see more...]()
 
 Deve ser adicionados os super heróis a uma lista pessoal. Na sua lista pessoal exclua ou abra a exibição detalhada do super herói.
 
-#### tarefa 13 - Wow! Bring the house down!!
+
+#### Tarefa 13 - Wow! Bring the house down!!
 
 [see more...]()
 
