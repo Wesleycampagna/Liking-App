@@ -8,7 +8,8 @@ Repositório simples para entendimento dos principais conceitos de android alem 
 - O projeto deve ser desenvolvido para contemplar a última versão (30.0.3);
 - O projeto deve ser desenvolvido para uma versão mínima de sdk 23;
 - O projeto deve ser desenvolvido em Java;
-- Não falar mal da pessoa que vos escreve isto.
+- Não falar mal da pessoa que vos escreve isto;
+- Se for utilizar como portfólio pessoal não esquecer dos créditos.
 
 ### Padrões de código sugeridos
 
