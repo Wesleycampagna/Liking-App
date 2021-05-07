@@ -24,6 +24,11 @@
     <string name="label_welcome_user">Olá, %s</string>
     <string name="select">selecionar</string>
     <string name="save_credentials">Salvar Credenciais</string>
+    <string name="search">Pesquisar</string>
+    <string name="back">voltar</string>
+    <string name="people">Pessoas</string>
+    <string name="my_list">minha lista</string>
+    <string name="label_list_super_heroes">Minha lista de Super heróis</string>
 
     <!-- treatment -->
     <string name="something_is_wrong">Algo não deu certo!</string>
@@ -35,5 +40,5 @@
     <string name="facebook_icon_description">facebook icon</string>
     <string name="logo_description">logo</string>
     <string name="gmail_icon_description">gmail icon</string>
-
+    <string name="add_descryption">adicionar</string>
 </resources>

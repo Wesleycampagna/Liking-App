@@ -22,7 +22,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:contentDescription="@string/logo_description"
-                android:src="@mipmap/logo_foreground" />
+                android:src="@mipmap/logo_transparent_foreground" />
 
         </RelativeLayout>
 

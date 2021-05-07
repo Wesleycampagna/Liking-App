@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".model_view_controller.list_super_hero.ListSuperHeroActivity">
+
+    <data />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/label_welcome_user"
+                    style="@style/button_style"
+                    android:layout_marginTop="23dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/label_welcome_user"
+                    android:textColor="@color/label_color" />
+
+                <TextView
+                    android:id="@+id/label_login"
+                    style="@style/greatest_label_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:alpha="0.5"
+                    android:text="@string/label_info_login_password" />
+
+                <TextView
+                    android:id="@+id/label_email"
+                    style="@style/greatest_label_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:alpha="0.5"
+                    android:text="@string/label_info_login_password" />
+
+            </LinearLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/edit_text_color">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/super_hero_adapter" />
+            </androidx.core.widget.NestedScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="148dp"
+            android:background="@drawable/corner_radius_at_top"
+            android:gravity="bottom"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/proceed_to_registering"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/rounded_button_shadow"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/button_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/my_list" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/proceed_to_gallery"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/rounded_button_shadow"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/button_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/back" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

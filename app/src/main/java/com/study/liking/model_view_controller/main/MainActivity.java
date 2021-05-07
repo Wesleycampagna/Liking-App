@@ -13,7 +13,8 @@ import com.study.liking.R;
 import com.study.liking.activities.BaseActivity;
 import com.study.liking.databinding.ActivityMainBinding;
 import com.study.liking.model_view_controller.auth_social_media_email.AuthSocialMediaEmailActivity;
-import com.study.liking.model_view_controller.list_component.ListComponentActivity;
+import com.study.liking.model_view_controller.list_super_hero.ListSuperHeroActivity;
+import com.study.liking.model_view_controller.people.PeopleActivity;
 import com.study.liking.model_view_controller.registry_user.RegistryUserActivity;
 import com.study.liking.models.OwnUser;
 import com.study.liking.utils.Constants;
@@ -28,6 +29,7 @@ public class MainActivity extends BaseActivity implements MainContract.View {
         super.onCreate(savedInstanceState);
         presenter = new MainPresenter(this, this);
         presenter.init();
+
     }
 
     @Override
@@ -49,8 +51,8 @@ public class MainActivity extends BaseActivity implements MainContract.View {
     protected void initActions() {
             binding.proceedToGallery.setOnClickListener(v -> MainActivity.this.goToGallery());
             binding.proceedToRegistering.setOnClickListener(v -> MainActivity.this.goToRegistryUserActivity());
-            binding.proceedToFacebookRegistration.setOnClickListener(v -> MainActivity.this.goToAuthSocialMedia());
-            binding.proceedToGmailRegistration.setOnClickListener(v -> MainActivity.this.goToAuthSocialMedia());
+            binding.proceedToFacebookRegistration.setOnClickListener(v -> MainActivity.this.goToAuthSocialMediaOrEmail());
+            binding.proceedToGmailRegistration.setOnClickListener(v -> MainActivity.this.goToAuthSocialMediaOrEmail());
     }
 
     private OwnUser getScreenAtributtes() {
@@ -69,10 +71,7 @@ public class MainActivity extends BaseActivity implements MainContract.View {
 
         if (presenter.isValidData(ownUser)) {
             // bundle
-            Intent intent = new Intent(this, RegistryUserActivity.class);
-            intent.putExtra(Constants.Bundle.USER_NAME, ownUser.name);
-            intent.putExtra(Constants.Bundle.USER_LOGIN, ownUser.login);
-            intent.putExtra(Constants.Bundle.USER_EMAIL, ownUser.email);
+            Intent intent = new Intent(this, PeopleActivity.class);
             startActivity(intent);
         }
         else showToast(getString(R.string.caught_invalid_input));
@@ -82,7 +81,7 @@ public class MainActivity extends BaseActivity implements MainContract.View {
         OwnUser ownUser = getScreenAtributtes();
 
         if (presenter.isValidData(ownUser)) {
-            Intent intent = new Intent(this, ListComponentActivity.class);
+            Intent intent = new Intent(this, ListSuperHeroActivity.class);
             // bundle
             intent.putExtra(Constants.Bundle.USER_NAME, ownUser.name);
             intent.putExtra(Constants.Bundle.USER_LOGIN, ownUser.login);
@@ -92,7 +91,7 @@ public class MainActivity extends BaseActivity implements MainContract.View {
         else showToast(getString(R.string.caught_invalid_input));
     }
 
-    private void goToAuthSocialMedia() {
+    private void goToAuthSocialMediaOrEmail() {
         Intent intent = new Intent(this, AuthSocialMediaEmailActivity.class);
         startActivityForResult(intent, Constants.RequestCodes.REQUEST_AUTH_SOCIAL_MEDIA_EMAIL);
     }
