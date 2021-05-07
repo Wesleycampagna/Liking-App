@@ -27,6 +27,7 @@
                 android:gravity="center">
 
                 <LinearLayout
+                    android:id="@+id/btn_go_back"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:gravity="center">
@@ -103,35 +104,52 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/edit_text_color">
+                android:layout_height="match_parent">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
+                    android:visibility="visible"
                     tools:listitem="@layout/people_adapter_view" />
 
             </ScrollView>
 
-            <androidx.coordinatorlayout.widget.CoordinatorLayout
+            <LinearLayout
                 android:id="@+id/fab_container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true">
+                android:gravity="end"
+                android:orientation="vertical">
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:id="@+id/fab_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_margin="8dp"
+                    android:layout_marginBottom="80dp"
+                    android:clickable="true"
                     android:contentDescription="@string/add_descryption"
+                    android:focusable="true"
                     android:src="@drawable/ic_baseline_add_24"
-                    app:backgroundTint="@color/button_color_one">
+                    android:visibility="gone"
+                    app:backgroundTint="@color/label_color"
+                    app:fabSize="mini" />
 
-                </com.google.android.material.floatingactionbutton.FloatingActionButton>
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/add_descryption"
+                    android:focusable="true"
+                    android:src="@drawable/ic_baseline_fiber_new_24"
+                    app:backgroundTint="@color/button_color_one" />
 
-            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+            </LinearLayout>
 
         </RelativeLayout>
 

@@ -24,6 +24,10 @@ public class RegistryUserActivity extends BaseActivity {
 
     @Override
     protected void initActions() {
+        binding.btnRegister.setOnClickListener(v -> setResultReturn());
+    }
 
+    private void setResultReturn() {
+        finish();
     }
 }

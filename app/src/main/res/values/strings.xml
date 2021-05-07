@@ -29,6 +29,7 @@
     <string name="people">Pessoas</string>
     <string name="my_list">minha lista</string>
     <string name="label_list_super_heroes">Minha lista de Super heróis</string>
+    <string name="register">cadastrar</string>
 
     <!-- treatment -->
     <string name="something_is_wrong">Algo não deu certo!</string>

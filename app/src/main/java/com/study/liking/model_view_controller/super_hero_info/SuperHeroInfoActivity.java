@@ -25,8 +25,10 @@ public class SuperHeroInfoActivity extends BaseActivity {
 
     @Override
     protected void initActions() {
-
+        binding.btnGoBack.setOnClickListener(v -> goBack());
     }
 
-
+    private void goBack() {
+        finish();
+    }
 }

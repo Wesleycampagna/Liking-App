@@ -91,7 +91,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/proceed_to_gallery"
+                android:id="@+id/btn_go_back"
                 android:layout_width="match_parent"
                 android:layout_height="43dp"
                 android:layout_marginBottom="16dp"
