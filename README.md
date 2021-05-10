@@ -43,7 +43,7 @@ _`tarefa N =>`_ **task-N**
 
 Uso de DataBiding:
 
-- Faz-se necessário este recurso por ser importante na nova fase do android, o mesmo deverá ser embutido em releases futuras nas aplicações de destino. Já foi anunciado que na chegada do _gradle 5.0_ os identificadores dos [recursos](https://developer.android.com/guide/topics/resources/providing-resources?hl=pt-br) não serão mais fixos, então o android dará prioridade de identificadores à bibliotecas nativas e de parceiros associados. [O aviso já é descrito pela ide](); **_____________________att_______________**
+- Faz-se necessário este recurso por ser importante na nova fase do android, o mesmo deverá ser embutido em releases futuras nas aplicações de destino. Já foi anunciado que na chegada do _gradle 5.0_ os identificadores dos [recursos](https://developer.android.com/guide/topics/resources/providing-resources?hl=pt-br) não serão mais fixos, então o android dará prioridade de identificadores à bibliotecas nativas e de parceiros associados.
   
 ### <a name="head1234"></a> Recursos disponibilizados 
 
