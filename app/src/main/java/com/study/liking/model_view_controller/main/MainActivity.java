@@ -2,6 +2,7 @@ package com.study.liking.model_view_controller.main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
@@ -18,7 +19,8 @@ import com.study.liking.utils.Constants;
 public class MainActivity extends BaseActivity implements MainContract.View {
 
     private ActivityMainBinding binding;
-    private  MainContract.Presenter presenter;
+    private MainContract.Presenter presenter;
+    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,13 @@ public class MainActivity extends BaseActivity implements MainContract.View {
             binding.editTextLastName.setText(ownUser.lastName);
             binding.login.setText(ownUser.login);
         }
+    }
+
+    @Override
+    public void setEmail(String email) {
+        new Handler(getMainLooper()).post(() -> {
+           this.email = email;
+        });
     }
 
     @Override
@@ -81,7 +90,7 @@ public class MainActivity extends BaseActivity implements MainContract.View {
             // bundle
             intent.putExtra(Constants.Bundle.USER_NAME, ownUser.name);
             intent.putExtra(Constants.Bundle.USER_LOGIN, ownUser.login);
-            intent.putExtra(Constants.Bundle.USER_EMAIL, ownUser.email);
+            intent.putExtra(Constants.Bundle.USER_EMAIL, this.email);
             startActivity(intent);
         }
         else showToast(getString(R.string.caught_invalid_input));

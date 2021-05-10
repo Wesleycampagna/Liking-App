@@ -9,6 +9,7 @@ public interface MainContract {
     interface View {
         void showToast(String message);
         void loadInterface(OwnUser ownUser);
+        void setEmail(String email);
     }
 
     interface Presenter {

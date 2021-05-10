@@ -2,6 +2,8 @@ package com.study.liking.api.responses.character_data_wrapper.response;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class StoryListResponse {
 
     @SerializedName("available")
@@ -14,6 +16,6 @@ public class StoryListResponse {
     public String collectionURI;
 
     @SerializedName("items")
-    public StorySummaryResponse items;
+    public List<StorySummaryResponse> items;
 
 }

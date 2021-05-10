@@ -15,6 +15,7 @@ import com.study.liking.databinding.ActivityListSuperHeroBinding;
 import com.study.liking.model_view_controller.registry_user.RegistryUserActivity;
 import com.study.liking.model_view_controller.registry_user.RegistryUserPresenter;
 import com.study.liking.model_view_controller.super_hero.SuperHeroActivity;
+import com.study.liking.utils.Constants;
 
 public class ListSuperHeroActivity extends BaseActivity implements ListSuperHeroContract.View {
 
@@ -35,6 +36,13 @@ public class ListSuperHeroActivity extends BaseActivity implements ListSuperHero
     }
 
     @Override
+    public void fitUI(Intent intent) {
+        binding.labelLogin.setText(getString(R.string.label_info_login_password , intent != null && intent.getStringExtra(Constants.Bundle.USER_LOGIN) != null ? intent.getStringExtra(Constants.Bundle.USER_LOGIN) : ""));
+        binding.labelEmail.setText(intent != null && intent.getStringExtra(Constants.Bundle.USER_EMAIL) != null ? intent.getStringExtra(Constants.Bundle.USER_EMAIL) : "");
+        binding.labelWelcomeUser.setText(getString(R.string.label_welcome_user, intent != null && intent.getStringExtra(Constants.Bundle.USER_NAME) != null ? intent.getStringExtra(Constants.Bundle.USER_NAME) : ""));
+    }
+
+    @Override
     protected void initActions() {
         binding.btnGoBack.setOnClickListener(v -> goBack());
         binding.proceedToRegistering.setOnClickListener(v -> goToPersonalListSuperHero());
@@ -46,6 +54,7 @@ public class ListSuperHeroActivity extends BaseActivity implements ListSuperHero
 
     private void goToPersonalListSuperHero() {
         Intent intent = new Intent(this, SuperHeroActivity.class);
+        intent.putExtra(Constants.Bundle.USER_NAME, binding.labelEmail.getText().toString());
         startActivity(intent);
     }
 

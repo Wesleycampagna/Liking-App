@@ -4,9 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
+import com.google.gson.Gson;
 import com.study.liking.APIHelper;
 import com.study.liking.api.requests.CharacterDataWrapperRequest;
 import com.study.liking.api.responses.CharacterDataWrapperResponse;
+import com.study.liking.env.Environment;
+import com.study.liking.utils.FileUtils;
 
 public class ListSuperHeroPresenter implements ListSuperHeroContract.Presenter {
 
@@ -22,6 +25,7 @@ public class ListSuperHeroPresenter implements ListSuperHeroContract.Presenter {
 
     @Override
     public void init() {
+        this.view.fitUI(intent);
         this.view.initRecyclerView();
         updateRecyclerView();
     }
@@ -34,13 +38,14 @@ public class ListSuperHeroPresenter implements ListSuperHeroContract.Presenter {
                     .setOffset(0)
                     .build();
 
-            try {
-                CharacterDataWrapperResponse response = APIHelper.getCharacters(request);
-                Log.d("API", response.toString());
-            }
-            catch (Exception e) {
-                Log.d("API", e.getMessage());
-            }
+//            try {
+//                CharacterDataWrapperResponse response = APIHelper.getCharacters(request);
+//                Log.d("API", response.toString());
+//                FileUtils.writeFile(Environment.getMarvelBaseUrl() + "/v1/public/characters", new Gson().toJson(response));
+//            }
+//            catch (Exception e) {
+//                Log.d("API", e.getMessage());
+//            }
         }).start();
     }
 

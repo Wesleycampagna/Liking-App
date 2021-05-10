@@ -21,6 +21,7 @@ public class RegistryUserActivity extends BaseActivity implements RegistryUserCo
     private ActivityRegistryUserBinding binding;
     private RegistryUserContract.Presenter presenter;
     private Date dateCalendarPicker;
+    private boolean isSaving;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +47,12 @@ public class RegistryUserActivity extends BaseActivity implements RegistryUserCo
     }
 
     private void getCalendarPick(int year, int month, int dayOfMonth) {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        isSaving = true;
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
         Calendar calendar = Calendar.getInstance();
         calendar.set(year, month, dayOfMonth);
         dateCalendarPicker = calendar.getTime();
+        isSaving = false;
     }
 
     private void saveData() {
@@ -66,17 +69,33 @@ public class RegistryUserActivity extends BaseActivity implements RegistryUserCo
     private void openCalendar() {
         // put result on calendar
         hideKeyboard(this);
-        long dateLong = binding.calendarView.calendar.getDate();
-        Calendar calendar = Calendar.getInstance();
-        Date datee = calendar.getTime();
-        binding.calendarView.calendar.setDate(datee.getTime());
+        Date date = getInitialDate();
+        binding.calendarView.calendar.setDate(date.getTime());
         binding.calendarView.calendarLayout.setVisibility(View.VISIBLE);
+    }
+
+    private Date getInitialDate() {
+        if (!binding.editTextDateBorn.getText().toString().equals("") && binding.editTextDateBorn.getText().toString() != null) {
+            try {
+                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+                return sdf.parse(binding.editTextDateBorn.getText().toString());
+            }
+            catch (Exception e) {
+                return actualDate();
+            }
+        }
+        else return actualDate();
+    }
+
+    private Date actualDate() {
+        Calendar calendar = Calendar.getInstance();
+        return calendar.getTime();
     }
 
     private void saveDateFromCalendar() {
         binding.calendarView.calendarLayout.setVisibility(View.GONE);
-        Date calendarDate = dateCalendarPicker;
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        Date calendarDate = dateCalendarPicker != null ? dateCalendarPicker : getInitialDate();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
         String date = dateFormat.format(calendarDate.getTime());
 
         // format to correct label

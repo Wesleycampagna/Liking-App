@@ -2,6 +2,7 @@ package com.study.liking;
 
 import android.app.Application;
 
+import com.study.liking.migrations.CreateDebugMigration;
 import com.study.liking.migrations.CreateOwnUserMigration;
 import com.study.liking.migrations.CreateUserMigration;
 import com.study.liking.utils.DateSerializerSprinkles;
@@ -26,5 +27,6 @@ public class LikingApplication extends Application {
         /* sprinkles.addMigration(new Create<Table>Migration()); */
         sprinkles.addMigration(new CreateOwnUserMigration());
         sprinkles.addMigration(new CreateUserMigration());
+        sprinkles.addMigration(new CreateDebugMigration());
     }
 }

@@ -46,6 +46,8 @@ public class MainPresenter implements MainContract.Presenter {
 
         if (ownUser.isUserNotFilled())
             return saveOwnUser(ownUser);
+
+        this.view.setEmail(ownUserDataBase.email);
         return ownUser.checkCredentials(ownUserDataBase);
     }
 
