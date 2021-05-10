@@ -30,3 +30,8 @@ Permite o agrupamento de mais de um filho onde a distancia e espaçamento serão
 É também o layout mais problemático de ser adicionado e ajsutado. 
 
 > [doc](https://developer.android.com/reference/androidx/constraintlayout/widget/ConstraintLayout)
+
+- ##### CoordinatorLayout
+Um layout que se propõe a realizar o mesmo ue _FrameLayout_ mas sem a restritividade de poder ter apenas um layout filho. 
+
+> [doc](https://developer.android.com/jetpack/androidx/releases/coordinatorlayout)

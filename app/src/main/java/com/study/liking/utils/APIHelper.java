@@ -1,4 +1,4 @@
-package com.study.liking;
+package com.study.liking.utils;
 
 import com.study.liking.api.Api;
 import com.study.liking.api.requests.CharacterDataWrapperRequest;

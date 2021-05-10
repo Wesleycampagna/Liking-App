@@ -30,7 +30,7 @@ public class SplashScreen extends BaseActivity {
     protected void onPostResume() {
         super.onPostResume();
 
-        new Handler(Looper.myLooper()).postDelayed(this::goToMainActivity, 2000);
+        new Handler(Looper.myLooper()).postDelayed(this::goToMainActivity, 1500);
     }
 
     private void goToMainActivity() {

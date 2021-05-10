@@ -2,14 +2,8 @@ package com.study.liking.model_view_controller.list_super_hero;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 
-import com.google.gson.Gson;
-import com.study.liking.APIHelper;
 import com.study.liking.api.requests.CharacterDataWrapperRequest;
-import com.study.liking.api.responses.CharacterDataWrapperResponse;
-import com.study.liking.env.Environment;
-import com.study.liking.utils.FileUtils;
 
 public class ListSuperHeroPresenter implements ListSuperHeroContract.Presenter {
 
