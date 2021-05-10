@@ -2,7 +2,6 @@ package com.study.liking.model_view_controller.people;
 
 import android.content.Context;
 
-import com.study.liking.listeners.OnTextChangeListener;
 import com.study.liking.models.User;
 
 import java.util.ArrayList;
