@@ -104,12 +104,14 @@
                             android:text="@string/name" />
 
                         <EditText
+                            android:id="@+id/edit_text_name"
                             style="@style/edit_text_style"
                             android:layout_width="match_parent"
                             android:layout_marginEnd="10dp"
-                            android:autofillHints=""
                             android:hint="@string/name"
-                            android:inputType="text" />
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:inputType="textCapWords"
+                            tools:ignore="Autofill" />
 
                     </LinearLayout>
 
@@ -128,12 +130,14 @@
                             android:text="@string/last_name" />
 
                         <EditText
+                            android:id="@+id/edit_text_last_name"
                             style="@style/edit_text_style"
                             android:layout_width="match_parent"
                             android:layout_marginStart="10dp"
-                            android:autofillHints=""
                             android:hint="@string/last_name"
-                            android:inputType="text" />
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:inputType="textCapWords"
+                            tools:ignore="Autofill" />
 
                     </LinearLayout>
 
@@ -166,13 +170,15 @@
                             android:orientation="horizontal">
 
                             <EditText
+                                android:id="@+id/edit_text_date_born"
                                 style="@style/edit_text_style"
                                 android:layout_width="match_parent"
-                                android:autofillHints=""
                                 android:hint="@string/birth_date_hint"
-                                android:inputType="date" />
+                                android:inputType="date"
+                                tools:ignore="Autofill" />
 
                             <ImageView
+                                android:id="@+id/btn_calendar"
                                 android:layout_width="34dp"
                                 android:layout_height="34dp"
                                 android:layout_alignParentTop="true"
@@ -202,12 +208,13 @@
                             android:text="@string/telephone" />
 
                         <EditText
+                            android:id="@+id/edit_text_phone"
                             style="@style/edit_text_style"
                             android:layout_width="match_parent"
                             android:layout_marginStart="10dp"
-                            android:autofillHints=""
                             android:hint="@string/telephone_hint"
-                            android:inputType="phone" />
+                            android:inputType="phone"
+                            tools:ignore="Autofill" />
 
                     </LinearLayout>
 
@@ -233,13 +240,14 @@
                         android:orientation="horizontal">
 
                         <EditText
+                            android:id="@+id/edit_text_cpf"
                             style="@style/edit_text_style"
                             android:layout_width="0dp"
                             android:layout_marginEnd="10dp"
                             android:layout_weight="1"
-                            android:autofillHints=""
                             android:hint="@string/cpf_hint"
-                            android:inputType="text" />
+                            android:inputType="number"
+                            tools:ignore="Autofill" />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -266,11 +274,12 @@
                         android:text="@string/e_mail" />
 
                     <EditText
+                        android:id="@+id/edit_text_email"
                         style="@style/edit_text_style"
                         android:layout_width="match_parent"
-                        android:autofillHints=""
                         android:hint="@string/e_mail"
-                        android:inputType="text" />
+                        android:inputType="textEmailAddress"
+                        tools:ignore="Autofill" />
 
                 </LinearLayout>
 
@@ -281,9 +290,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="90dp"
+            android:layout_alignParentBottom="true"
             android:background="@drawable/corner_radius_at_top"
             android:gravity="bottom"
-            android:layout_alignParentBottom="true"
             android:orientation="vertical">
 
             <LinearLayout
@@ -306,7 +315,9 @@
 
         </LinearLayout>
 
-        <include layout="@layout/calendar_layout" />
+        <include
+            android:id="@+id/calendar_view"
+            layout="@layout/calendar_layout" />
 
     </RelativeLayout>
 

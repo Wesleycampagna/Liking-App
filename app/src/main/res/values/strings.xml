@@ -32,6 +32,7 @@
     <string name="register">cadastrar</string>
 
     <!-- treatment -->
+    <string name="cpf_already_exists">CPF já cadastrado!</string>
     <string name="something_is_wrong">Algo não deu certo!</string>
     <string name="invalid_email">O email não pode ser vazio!</string>
     <string name="successfuly_save_data">E-mail registrado!</string>

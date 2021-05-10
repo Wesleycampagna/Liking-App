@@ -15,7 +15,7 @@ public class CreateUserMigration extends Migration {
             " email TEXT, " +
             " phone_number TEXT, " +
             " birth_date TEXT, " +
-            " password TEXT, " +
+            " cpf TEXT, " +
             " avatar TEXT " +
             " ) "
         );

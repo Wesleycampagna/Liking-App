@@ -82,11 +82,12 @@
                 </LinearLayout>
 
                 <EditText
+                    android:id="@+id/search_user"
                     style="@style/edit_text_style"
                     android:layout_width="match_parent"
                     android:layout_alignParentTop="true"
                     android:layout_marginTop="0dp"
-                    android:autofillHints=""
+                    tools:ignore="Autofill"
                     android:hint="@string/search"
                     android:paddingStart="30dp"
                     android:paddingEnd="30dp">
@@ -107,6 +108,7 @@
                 android:layout_height="match_parent">
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
@@ -146,7 +148,7 @@
                     android:clickable="true"
                     android:contentDescription="@string/add_descryption"
                     android:focusable="true"
-                    android:src="@drawable/ic_baseline_fiber_new_24"
+                    android:src="@drawable/ic_baseline_menu_24"
                     app:backgroundTint="@color/button_color_one" />
 
             </LinearLayout>

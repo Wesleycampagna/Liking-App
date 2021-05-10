@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data />
 
@@ -13,7 +14,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="20dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -68,10 +70,10 @@
                                 android:layout_width="0dp"
                                 android:layout_marginEnd="10dp"
                                 android:layout_weight="1"
-                                android:autofillHints=""
                                 android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                 android:hint="@string/name"
-                                android:inputType="textCapWords" />
+                                android:inputType="textCapWords"
+                                tools:ignore="Autofill" />
 
                             <EditText
                                 android:id="@+id/edit_text_last_name"
@@ -79,10 +81,10 @@
                                 android:layout_width="0dp"
                                 android:layout_marginStart="10dp"
                                 android:layout_weight="1"
-                                android:autofillHints=""
                                 android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                 android:hint="@string/last_name"
-                                android:inputType="text" />
+                                android:inputType="text"
+                                tools:ignore="Autofill" />
 
                         </LinearLayout>
 
@@ -105,9 +107,9 @@
                             android:id="@+id/login"
                             style="@style/edit_text_style"
                             android:layout_width="match_parent"
-                            android:autofillHints=""
                             android:hint="@string/login"
-                            android:inputType="text" />
+                            android:inputType="textNoSuggestions"
+                            tools:ignore="Autofill" />
 
                     </LinearLayout>
 
@@ -128,9 +130,9 @@
                             android:id="@+id/password"
                             style="@style/edit_text_style"
                             android:layout_width="match_parent"
-                            android:autofillHints=""
                             android:hint="@string/password"
-                            android:inputType="textPassword" />
+                            android:inputType="textPassword"
+                            tools:ignore="Autofill" />
 
                     </LinearLayout>
 

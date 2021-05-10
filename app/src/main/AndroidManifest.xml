@@ -10,11 +10,6 @@
         android:roundIcon="@mipmap/logo_round"
         android:supportsRtl="true"
         android:theme="@style/main_theme">
-        <activity android:name=".model_view_controller.super_hero_info.SuperHeroInfoActivity"></activity>
-        <activity android:name=".model_view_controller.super_hero.SuperHeroActivity" />
-        <activity android:name=".model_view_controller.people.PeopleActivity" />
-        <activity android:name=".activities.BaseActivity" />
-        <activity android:name=".model_view_controller.list_super_hero.ListSuperHeroActivity" />
         <activity android:name=".activities.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,9 +17,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".model_view_controller.registry_user.RegistryUserActivity" />
-        <activity android:name=".model_view_controller.auth_social_media_email.AuthSocialMediaEmailActivity" />
-        <activity android:name=".model_view_controller.main.MainActivity" />
+        <activity android:name=".model_view_controller.super_hero_info.SuperHeroInfoActivity" />
+        <activity android:name=".model_view_controller.super_hero.SuperHeroActivity" />
+        <activity android:name=".model_view_controller.people.PeopleActivity" />
+        <activity android:name=".activities.BaseActivity" />
+        <activity android:name=".model_view_controller.list_super_hero.ListSuperHeroActivity" />
+        <activity
+            android:name=".model_view_controller.registry_user.RegistryUserActivity"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".model_view_controller.auth_social_media_email.AuthSocialMediaEmailActivity"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".model_view_controller.main.MainActivity"
+            android:windowSoftInputMode="adjustPan"/>
 
         <provider
             android:name="br.com.integrati.sprinkles_inti_library.DatabaseContentProvider"

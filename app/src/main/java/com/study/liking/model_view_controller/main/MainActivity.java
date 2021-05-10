@@ -2,9 +2,6 @@ package com.study.liking.model_view_controller.main;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
@@ -15,7 +12,6 @@ import com.study.liking.databinding.ActivityMainBinding;
 import com.study.liking.model_view_controller.auth_social_media_email.AuthSocialMediaEmailActivity;
 import com.study.liking.model_view_controller.list_super_hero.ListSuperHeroActivity;
 import com.study.liking.model_view_controller.people.PeopleActivity;
-import com.study.liking.model_view_controller.registry_user.RegistryUserActivity;
 import com.study.liking.models.OwnUser;
 import com.study.liking.utils.Constants;
 
@@ -104,12 +100,5 @@ public class MainActivity extends BaseActivity implements MainContract.View {
                 presenter.saveData(data);
             }
         }
-    }
-
-    @Override
-    public void showToast(String message) {
-        new Handler(Looper.myLooper()).post(() -> {
-            Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-        });
     }
 }
