@@ -9,7 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:layout_margin="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/corner_radius"
         android:gravity="center_vertical"
         android:orientation="horizontal">
@@ -22,7 +25,6 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:alpha="0.3"
                 android:elevation="0dp"
                 android:innerRadius="0dp"
                 android:shape="ring"
@@ -32,6 +34,7 @@
                 app:cardElevation="0dp">
 
                 <ImageView
+                    android:id="@+id/super_hero_avatar"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
@@ -50,19 +53,24 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/super_hero_name"
                 style="@style/greatest_label_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/name"/>
 
             <TextView
+                android:id="@+id/super_hero_description"
                 style="@style/label_style"
                 android:alpha="0.5"
+                android:ellipsize="end"
+                android:maxLines="2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/name"/>
 
             <TextView
+                android:id="@+id/super_hero_quantity_comics"
                 style="@style/label_style"
                 android:alpha="0.5"
                 android:layout_width="wrap_content"
@@ -80,7 +88,7 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:id="@+id/btn_add_super_hero"
+                android:id="@+id/btn_add_edit_super_hero"
                 android:layout_width="30dp"
                 android:layout_height="43dp"
                 android:layout_marginEnd="40dp"
@@ -89,6 +97,7 @@
                 tools:ignore="NestedWeights">
 
                 <ImageView
+                    android:id="@+id/image_view"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="@string/search"

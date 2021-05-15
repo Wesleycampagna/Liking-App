@@ -49,9 +49,9 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="15dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginBottom="6dp"
                     android:background="@drawable/border_search_container">
 
@@ -69,14 +69,15 @@
                     </LinearLayout>
 
                     <EditText
+                        android:id="@+id/search_super_hero"
                         style="@style/edit_text_style"
                         android:layout_width="match_parent"
                         android:layout_alignParentTop="true"
                         android:layout_marginTop="0dp"
-                        android:autofillHints=""
                         android:hint="@string/search"
                         android:paddingStart="30dp"
-                        android:paddingEnd="30dp">
+                        android:paddingEnd="30dp"
+                        tools:ignore="Autofill">
 
                     </EditText>
 
@@ -85,15 +86,24 @@
             </LinearLayout>
 
             <androidx.core.widget.NestedScrollView
+                android:id="@+id/recycler_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/edit_text_color">
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:listitem="@layout/super_hero_adapter" />
+
             </androidx.core.widget.NestedScrollView>
+
+            <include layout="@layout/loading_component"
+                android:id="@+id/loading_component"
+                android:layout_marginBottom="120dp"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent" />
 
         </LinearLayout>
 

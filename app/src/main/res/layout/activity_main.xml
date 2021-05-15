@@ -173,8 +173,8 @@
 
                         <ImageView
                             android:id="@+id/proceed_to_facebook_registration"
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
                             android:layout_gravity="center"
                             android:layout_marginEnd="10dp"
                             android:alpha="0.65"
@@ -183,13 +183,13 @@
 
                         <ImageView
                             android:id="@+id/proceed_to_gmail_registration"
-                            android:layout_width="53dp"
-                            android:layout_height="48dp"
+                            android:layout_width="73dp"
+                            android:layout_height="68dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginStart="10dp"
                             android:alpha="0.65"
                             android:contentDescription="@string/gmail_icon_description"
-                            android:src="@mipmap/ic_gmail_round" />
+                            android:src="@mipmap/ic_gmail_foreground" />
 
                     </LinearLayout>
 

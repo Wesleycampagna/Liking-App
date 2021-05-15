@@ -16,11 +16,11 @@ import retrofit.converter.GsonConverter;
 import retrofit.http.GET;
 import retrofit.http.Query;
 
-public class Api {
+public class MarvelApi {
 
-    public static Api.Routes routes;
+    public static MarvelApi.Routes routes;
 
-    public static Api.Routes getApiMarvel(Context context) {
+    public static MarvelApi.Routes getApiMarvel(Context context) {
 
         if (routes == null) {
             Gson gson = new GsonBuilder()
@@ -28,7 +28,7 @@ public class Api {
                     .create();
 
             RestAdapter.Builder builder = new RestAdapter.Builder()
-                    .setEndpoint(Environment.getMarvelBaseUrl())
+                    .setEndpoint(Environment.getMarvelBaseUrl.base)
                     .setConverter(new GsonConverter(gson))
                     .setLogLevel(RestAdapter.LogLevel.FULL)
                     .setClient(new OkClient())
@@ -36,7 +36,7 @@ public class Api {
 
             RestAdapter restAdapter = builder.build();
 
-            routes = restAdapter.create(Api.Routes.class);
+            routes = restAdapter.create(MarvelApi.Routes.class);
         }
         return routes;
     }

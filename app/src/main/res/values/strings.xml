@@ -30,6 +30,11 @@
     <string name="my_list">minha lista</string>
     <string name="label_list_super_heroes">Minha lista de Super heróis</string>
     <string name="register">cadastrar</string>
+    <string name="quantity_comics">comics: %d</string>
+    <string name="greatest_quantity_comics">comics: more than 20</string>
+    <string name="no_description">no description</string>
+    <string name="api_error">Ops! Parece que um vilão bloqueou a conexão!</string>
+    <string name="successfuly_save_super_hero">Personagem salvo na sua lista de likes!</string>
 
     <!-- treatment -->
     <string name="cpf_already_exists">CPF já cadastrado!</string>
