@@ -10,6 +10,7 @@ import com.study.liking.activities.BaseActivity;
 import com.study.liking.databinding.ActivityRegistryUserBinding;
 import com.study.liking.models.User;
 import com.study.liking.utils.MaskUtils;
+import com.study.liking.utils.Utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -77,14 +78,16 @@ public class RegistryUserActivity extends BaseActivity implements RegistryUserCo
     private Date getInitialDate() {
         if (!binding.editTextDateBorn.getText().toString().equals("") && binding.editTextDateBorn.getText().toString() != null) {
             try {
+                String date = binding.editTextDateBorn.getText().toString();
+                if (Utils.isBirthDateInvalid(MaskUtils.unmask(date)))
+                    return actualDate();
+
                 SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
-                return sdf.parse(binding.editTextDateBorn.getText().toString());
-            }
-            catch (Exception e) {
+                return sdf.parse(date);
+            } catch (Exception e) {
                 return actualDate();
             }
-        }
-        else return actualDate();
+        } else return actualDate();
     }
 
     private Date actualDate() {

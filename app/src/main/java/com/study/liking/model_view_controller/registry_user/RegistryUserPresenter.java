@@ -6,11 +6,13 @@ import android.os.Bundle;
 import com.study.liking.R;
 import com.study.liking.databinding.ActivityRegistryUserBinding;
 import com.study.liking.exceptions.CpfException;
+import com.study.liking.exceptions.DateParseLocalException;
 import com.study.liking.exceptions.FieldFormException;
 import com.study.liking.exceptions.SprinklesNotSaveException;
 import com.study.liking.models.User;
 import com.study.liking.utils.Constants;
 import com.study.liking.utils.MaskUtils;
+import com.study.liking.utils.Utils;
 
 public class RegistryUserPresenter implements RegistryUserContract.Presenter {
 
@@ -41,7 +43,7 @@ public class RegistryUserPresenter implements RegistryUserContract.Presenter {
         String cpf = MaskUtils.unmask(binding.editTextCpf.getText().toString());
         User user;
 
-        // check if it is a user to edit or a new user
+        // check if this is a user to edit or a new user
         if (editUser == null) {
             // check if is a valid register -> by CPF
             boolean existsCpf = User.isValidUser(cpf);
@@ -60,12 +62,24 @@ public class RegistryUserPresenter implements RegistryUserContract.Presenter {
         user.lastName = MaskUtils.unmask(binding.editTextLastName.getText().toString());
         user.phoneNumber = MaskUtils.unmask(binding.editTextPhone.getText().toString());
 
+        this.validateUserData(user);
+
         boolean saved = user.save();
         if (!saved) throw new SprinklesNotSaveException("Os dados não foram salvos!");
     }
 
-    private void validateFields(ActivityRegistryUserBinding binding) throws Exception {
+    private void validateUserData(User user) throws FieldFormException, DateParseLocalException {
+        if (!Utils.isCpfValid(user.cpf, true))
+            throw new FieldFormException("Cpf é inválido!");
 
+        if (Utils.isBirthDateInvalid(user.birthDate))
+            throw new FieldFormException("Data de nascimento é inválida!");
+
+        if (!Utils.isPhoneValid(user.phoneNumber))
+            throw new FieldFormException("telefone é inválido!");
+    }
+
+    private void validateFields(ActivityRegistryUserBinding binding) throws Exception {
         if (binding.editTextName.getText().toString().equals("") || binding.editTextName.getText().toString() == null)
             throw new FieldFormException("Nome não pode ser vazio!");
 
