@@ -137,7 +137,7 @@
                     android:focusable="true"
                     android:src="@drawable/ic_baseline_add_24"
                     android:visibility="gone"
-                    app:backgroundTint="@color/label_color"
+                    app:backgroundTint="@color/secondary_color"
                     app:fabSize="mini" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton

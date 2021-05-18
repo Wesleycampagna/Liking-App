@@ -51,6 +51,12 @@ public class SuperHeroActivity extends BaseActivity implements SuperHeroContract
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        this.presenter.onResumeCalled();
+    }
+
+    @Override
     public void initRecyclerView() {
         adapter = new SuperHeroRecyclerViewAdapter(this, presenter);
         binding.recycler.setLayoutManager(new LinearLayoutManager(this));

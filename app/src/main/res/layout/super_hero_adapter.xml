@@ -88,7 +88,7 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:id="@+id/btn_add_edit_super_hero"
+                android:id="@+id/btn_info"
                 android:layout_width="30dp"
                 android:layout_height="43dp"
                 android:layout_marginEnd="40dp"
@@ -101,18 +101,19 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="@string/search"
-                    android:src="@drawable/ic_add_button" />
+                    android:src="@drawable/ic_baseline_info_24" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/btn_remove_super_hero"
+                android:id="@+id/btn_add_remove_super_hero"
                 android:layout_width="30dp"
                 android:layout_height="43dp"
                 android:layout_alignParentEnd="true"
                 android:gravity="center">
 
                 <ImageView
+                    android:id="@+id/image_icon_add_remove"
                     android:layout_width="22dp"
                     android:layout_height="22dp"
                     android:contentDescription="@string/search"

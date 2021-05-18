@@ -13,7 +13,7 @@
         <com.google.android.material.progressindicator.CircularProgressIndicator
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:indicatorColor="@color/label_color"
+            app:indicatorColor="@color/secondary_color"
             android:indeterminate="true" />
 
     </LinearLayout>

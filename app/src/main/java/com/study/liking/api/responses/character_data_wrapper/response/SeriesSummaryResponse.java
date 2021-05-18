@@ -2,7 +2,9 @@ package com.study.liking.api.responses.character_data_wrapper.response;
 
 import com.google.gson.annotations.SerializedName;
 
-public class SeriesSummaryResponse {
+import java.io.Serializable;
+
+public class SeriesSummaryResponse implements Serializable {
 
     @SerializedName("resourceURI")
     public String resourceURI;

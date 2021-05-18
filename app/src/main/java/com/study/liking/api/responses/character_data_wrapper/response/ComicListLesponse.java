@@ -2,9 +2,10 @@ package com.study.liking.api.responses.character_data_wrapper.response;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class ComicListLesponse {
+public class ComicListLesponse implements Serializable {
 
     @SerializedName("available")
     public int available;

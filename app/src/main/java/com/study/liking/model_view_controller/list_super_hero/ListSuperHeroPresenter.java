@@ -21,6 +21,10 @@ public class ListSuperHeroPresenter implements ListSuperHeroContract.Presenter {
     private ListSuperHeroContract.View view;
     private Intent intent;
     private Thread thread;
+    private int offSet;
+    private int total;
+    private int limit;
+    private String textSaved;
 
     public ListSuperHeroPresenter(ListSuperHeroContract.View view, Context context, Intent intent) {
         this.context = context;
@@ -37,12 +41,21 @@ public class ListSuperHeroPresenter implements ListSuperHeroContract.Presenter {
     }
 
     @Override
+    public void onResumeCalled() {
+        this.offSet = 0;
+        this.textSaved = "";
+        this.total = 0;
+    }
+
+    @Override
     public void updateRecyclerView() {
         this.view.loadingIndicator(true);
         new Thread(() -> {
+            limit = 10;
+            offSet = 0;
             CharacterDataWrapperRequest request = new CharacterDataWrapperRequest.Builder()
-                    .setLimit(40)
-                    .setOffset(0)
+                    .setLimit(limit)
+                    .setOffset(offSet)
                     .build();
 
             requestCharacters(request);
@@ -52,6 +65,7 @@ public class ListSuperHeroPresenter implements ListSuperHeroContract.Presenter {
     @Override
     public void filterData(String text) {
         final long now = System.currentTimeMillis();
+        this.textSaved = text;
 
         if (thread != null && thread.isAlive())
             thread.interrupt();
@@ -75,15 +89,19 @@ public class ListSuperHeroPresenter implements ListSuperHeroContract.Presenter {
             CharacterDataWrapperRequest request;
 
             if (text.equals("")) {
+                limit = 10;
+                offSet = 0;
                 request = new CharacterDataWrapperRequest.Builder()
-                        .setLimit(40)
-                        .setOffset(0)
+                        .setLimit(limit)
+                        .setOffset(offSet)
                         .build();
             }
             else {
+                limit = 10;
+                offSet = 0;
                 request = new CharacterDataWrapperRequest.Builder()
-                        .setLimit(20)
-                        .setOffset(0)
+                        .setLimit(limit)
+                        .setOffset(offSet)
                         .setNameStartsWith(text)
                         .build();
             }
@@ -99,12 +117,41 @@ public class ListSuperHeroPresenter implements ListSuperHeroContract.Presenter {
         return this.intent;
     }
 
+    @Override
+    public void onBottomFinallyReached() {
+        new Thread(() -> {
+            offSet += limit;
+            limit = 10;
+            CharacterDataWrapperRequest.Builder builder = new CharacterDataWrapperRequest.Builder()
+                    .setLimit(limit)
+                    .setOffset(offSet);
+
+            if (textSaved != null && !textSaved.equals(""))
+                builder.setNameStartsWith(textSaved);
+
+            requestCharactersByScrolling(builder.build());
+        }).start();
+    }
+
     private void requestCharacters(CharacterDataWrapperRequest request) {
         try {
             CharacterDataWrapperResponse response = APIHelper.getCharacters(request);
 
             if (response.status.equals(STATUS_OK))
                 this.view.updateRecyclerViewAtUiThread(response.data, getSuperHeros());
+
+        } catch (Exception e) {
+            if (!e.getMessage().equals("interrupted"))
+                this.view.loadError();
+        }
+    }
+
+    private void requestCharactersByScrolling(CharacterDataWrapperRequest request) {
+        try {
+            CharacterDataWrapperResponse response = APIHelper.getCharacters(request);
+
+            if (response.status.equals(STATUS_OK))
+                this.view.updateRecyclerViewByScrollingAtUiThread(response.data, getSuperHeros());
 
         } catch (Exception e) {
             if (!e.getMessage().equals("interrupted"))
@@ -129,7 +176,7 @@ public class ListSuperHeroPresenter implements ListSuperHeroContract.Presenter {
     @Override
     public void onAdd(CharacterResponse character) {
         SuperHero superHero = new SuperHero();
-        superHero.description = character.description;
+        superHero.description = !character.description.equals("") && character.description != null ? character.description : context.getString(R.string.no_description);
         superHero.idSuperHero = character.id;
         superHero.name = character.name;
         superHero.quantityComics = character.comics != null && character.comics.items != null ? character.comics.items.size() : 0;

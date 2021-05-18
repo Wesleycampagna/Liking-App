@@ -2,7 +2,7 @@ package com.study.liking.model_view_controller.super_hero;
 
 import android.content.Intent;
 
-import com.study.liking.listeners.OnEditSuperHeroListener;
+import com.study.liking.listeners.OnRemoveSuperHeroListener;
 import com.study.liking.listeners.OnTextChangeListener;
 import com.study.liking.models.SuperHero;
 
@@ -20,11 +20,12 @@ public interface SuperHeroContract {
         void showToast(String message);
     }
 
-    interface Presenter extends OnEditSuperHeroListener, OnTextChangeListener {
+    interface Presenter extends OnRemoveSuperHeroListener, OnTextChangeListener {
         void init();
         void updateRecyclerView();
         void filterData(String text);
         void onBottomFinallyReached();
         int getListSize();
+        void onResumeCalled();
     }
 }

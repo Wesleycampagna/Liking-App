@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="primary_color">#FFFFFF</color>
-    <color name="label_color">#2A2C4D</color>
+    <color name="secondary_color">#2A2C4D</color>
     <color name="edit_text_color">#50DDDDDD</color>
     <color name="edit_text_color_hint">#AAAAAA</color>
     <color name="background_secondary_color">#919191</color>

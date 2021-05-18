@@ -35,6 +35,10 @@
     <string name="no_description">no description</string>
     <string name="api_error">Ops! Parece que um vilão bloqueou a conexão!</string>
     <string name="successfuly_save_super_hero">Personagem salvo na sua lista de likes!</string>
+    <string name="comics">comics</string>
+    <string name="events">eventos</string>
+    <string name="stories">histórias</string>
+    <string name="series">séries</string>
 
     <!-- treatment -->
     <string name="cpf_already_exists">CPF já cadastrado!</string>

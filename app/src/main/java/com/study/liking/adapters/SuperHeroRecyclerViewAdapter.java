@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.study.liking.R;
 import com.study.liking.databinding.SuperHeroAdapterBinding;
-import com.study.liking.listeners.OnEditSuperHeroListener;
+import com.study.liking.listeners.OnRemoveSuperHeroListener;
 import com.study.liking.models.SuperHero;
 import com.study.liking.view_holders.SuperHeroViewHolder;
 
@@ -18,13 +18,13 @@ import java.util.List;
 public class SuperHeroRecyclerViewAdapter extends RecyclerView.Adapter<SuperHeroViewHolder> {
 
     private Context context;
-    private OnEditSuperHeroListener onHeroEdit;
+    private OnRemoveSuperHeroListener onHeroInfo;
     private List<SuperHero> superHeroes;
     private boolean canScroll;
 
-    public SuperHeroRecyclerViewAdapter(Context context, OnEditSuperHeroListener onHeroEdit) {
+    public SuperHeroRecyclerViewAdapter(Context context, OnRemoveSuperHeroListener onHeroInfo) {
         this.context = context;
-        this.onHeroEdit = onHeroEdit;
+        this.onHeroInfo = onHeroInfo;
         this.canScroll = true;
     }
 
@@ -60,8 +60,8 @@ public class SuperHeroRecyclerViewAdapter extends RecyclerView.Adapter<SuperHero
     }
 
     private void setActions(SuperHeroAdapterBinding binding, SuperHero superHero) {
-        binding.btnAddEditSuperHero.setOnClickListener(v -> onHeroEdit.onEdit(superHero));
-        binding.btnRemoveSuperHero.setOnClickListener(v -> removeSuperHero(superHero));
+        binding.btnInfo.setOnClickListener(v -> onHeroInfo.onInfo(superHero));
+        binding.btnAddRemoveSuperHero.setOnClickListener(v -> removeSuperHero(superHero));
     }
 
     private void removeSuperHero(SuperHero superHero) {

@@ -14,7 +14,9 @@ public class Constants {
         public static final String USER_LOGIN = "USER_LOGIN";
         public static final String USER_EMAIL = "USER_EMAIL";
         public static final String USER_EDIT = "USER_EDIT";
-        public static final String SUPER_HERO_ID = "USER_EDIT";
+        public static final String SUPER_HERO_ID = "SUPER_HERO_ID";
+        public static final String IS_SUPER_HERO_SAVED = "IS_SUPER_HERO_SAVED";
+        public static final String SUPER_HERO = "SUPER_HERO";
     }
 
     public static final class Api {

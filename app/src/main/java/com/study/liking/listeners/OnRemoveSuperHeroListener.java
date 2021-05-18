@@ -2,7 +2,7 @@ package com.study.liking.listeners;
 
 import com.study.liking.models.SuperHero;
 
-public interface OnEditSuperHeroListener {
+public interface OnRemoveSuperHeroListener {
 
-    void onEdit(SuperHero superHero);
+    void onInfo(SuperHero superHero);
 }

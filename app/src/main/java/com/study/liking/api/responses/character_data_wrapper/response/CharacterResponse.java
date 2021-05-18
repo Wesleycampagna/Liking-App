@@ -2,10 +2,11 @@ package com.study.liking.api.responses.character_data_wrapper.response;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class CharacterResponse {
+public class CharacterResponse implements Serializable {
 
     @SerializedName("id")
     public long id;

@@ -36,14 +36,11 @@ public class SuperHero extends Model {
     @Column("image_extension")
     public String imageExtension;
 
-    @Column("off_set")
-    public int offSet;
+    public boolean api;
 
-    @Column("count")
-    public int count;
-
-    @Column("total")
-    public int total;
+    public static SuperHero find(long id) {
+        return Query.one(SuperHero.class, " SELECT * FROM super_hero WHERE id_super_hero = ? LIMIT 1", id).get();
+    }
 
     public static List<SuperHero> findAll() {
         CursorList<SuperHero> cursorList = Query.many(SuperHero.class, " SELECT * FROM super_hero ", true).get();
@@ -52,24 +49,24 @@ public class SuperHero extends Model {
         return superHeroes;
     }
 
-    public static List<SuperHero> findAllByOffsetAndQuantity(int offset, int quantity) {
-        // TODO-wesley edit here
-        CursorList<SuperHero> cursorList = Query.many(SuperHero.class, " SELECT * FROM super_hero ", true).get();
+    public static List<SuperHero> findAllByOffsetAndQuantity(int offset, int limit) {
+        CursorList<SuperHero> cursorList = Query.many(SuperHero.class, " SELECT * FROM super_hero LIMIT ?, ? ", offset, limit).get();
         List<SuperHero> superHeroes = cursorList.asList();
         cursorList.close();
         return superHeroes;
     }
 
-    public static List<SuperHero> filterSuperHeroesBy(String text) {
+    public static List<SuperHero> filterSuperHeroesBy(String text, int offset, int limit) {
         StringBuilder sql = new StringBuilder()
                 .append(" SELECT * FROM super_hero ")
                 .append(" WHERE name LIKE ? ")
                 .append(" OR id_super_hero LIKE ? ")
-                .append(" OR description LIKE ? ");
+                .append(" OR description LIKE ? ")
+                .append(" LIMIT ?, ? ");
 
         text = String.format("%%%s%%", text.toLowerCase());
 
-        CursorList<SuperHero> cursorList = Query.many(SuperHero.class, sql.toString(), text, text, text).get();
+        CursorList<SuperHero> cursorList = Query.many(SuperHero.class, sql.toString(), text, text, text, offset, limit).get();
         List<SuperHero> superHeroes = cursorList.asList();
         cursorList.close();
         return superHeroes;

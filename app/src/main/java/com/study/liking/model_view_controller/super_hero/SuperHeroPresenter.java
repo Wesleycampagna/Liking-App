@@ -14,14 +14,13 @@ public class SuperHeroPresenter implements SuperHeroContract.Presenter {
     private Context context;
     private SuperHeroContract.View view;
     private Intent intent;
-    private int offsetList;
+    private int offset;
     List<SuperHero> superHeroesAtAdapter;
 
     public SuperHeroPresenter(Context context, SuperHeroContract.View view, Intent intent) {
         this.context = context;
         this.view = view;
         this.intent = intent;
-        this.offsetList = 0;
     }
 
     @Override
@@ -32,26 +31,33 @@ public class SuperHeroPresenter implements SuperHeroContract.Presenter {
         updateRecyclerView();
     }
 
+
+
+    @Override
+    public void onResumeCalled() {
+        this.offset = 0;
+    }
+
     @Override
     public void updateRecyclerView() {
-        List<SuperHero> superHeroes = SuperHero.findAllByOffsetAndQuantity(offsetList, Constants.QUANTITY_ITEM_LIST);
+        List<SuperHero> superHeroes = SuperHero.findAllByOffsetAndQuantity(offset, Constants.QUANTITY_ITEM_LIST);
         superHeroesAtAdapter = superHeroes;
         updateRecyclerViewAtUiThread(superHeroes);
     }
 
     @Override
     public void filterData(String text) {
-        List<SuperHero> superHeroes = SuperHero.filterSuperHeroesBy(text);
+        List<SuperHero> superHeroes = SuperHero.filterSuperHeroesBy(text, offset, Constants.QUANTITY_ITEM_LIST);
         superHeroesAtAdapter = superHeroes;
         updateRecyclerViewAtUiThread(superHeroes);
     }
 
     @Override
     public void onBottomFinallyReached() {
-        List<SuperHero> superHeroes = SuperHero.findAllByOffsetAndQuantity(offsetList, Constants.QUANTITY_ITEM_LIST);
-        ++offsetList;
-        superHeroesAtAdapter.addAll(superHeroes);
-        if (offsetList <= 2) {
+        offset += Constants.QUANTITY_ITEM_LIST;
+        List<SuperHero> superHeroes = SuperHero.findAllByOffsetAndQuantity(offset, Constants.QUANTITY_ITEM_LIST);
+        if (superHeroes != null && superHeroes.size() > 0) {
+            superHeroesAtAdapter.addAll(superHeroes);
             updateRecyclerViewAtUiThread(superHeroesAtAdapter);
         }
         else view.loadingIndicator(false);
@@ -73,7 +79,7 @@ public class SuperHeroPresenter implements SuperHeroContract.Presenter {
     }
 
     @Override
-    public void onEdit(SuperHero superHero) {
+    public void onInfo(SuperHero superHero) {
         this.view.goToSuperHeroInfo(superHero);
     }
 }

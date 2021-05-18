@@ -28,7 +28,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="23dp"
                     android:text="@string/label_welcome_user"
-                    android:textColor="@color/label_color" />
+                    android:textColor="@color/secondary_color" />
 
                 <TextView
                     style="@style/greatest_label_style"

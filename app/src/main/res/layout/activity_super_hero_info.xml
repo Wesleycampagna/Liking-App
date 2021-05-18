@@ -23,14 +23,14 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/label_welcome_user"
+                    android:id="@+id/label_super_hero_name"
                     style="@style/button_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="23dp"
                     android:text="@string/label_welcome_user"
-                    android:textColor="@color/label_color" />
+                    android:textColor="@color/secondary_color" />
 
                 <TextView
                     android:id="@+id/label_list_super_heroes"
@@ -51,12 +51,14 @@
                 android:background="@drawable/corner_radius"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:paddingBottom="20dp"
+                android:paddingTop="30dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="90dp"
                     android:layout_height="90dp"
-                    android:alpha="0.3"
                     android:elevation="0dp"
                     android:innerRadius="0dp"
                     android:shape="ring"
@@ -66,13 +68,46 @@
                     app:cardElevation="0dp">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:id="@+id/super_hero_avatar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:contentDescription="@string/logo_description"
                         android:src="@drawable/ic_baseline_person_24" />
 
                 </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/super_hero_description"
+                    style="@style/greatest_label_style"
+                    android:alpha="0.5"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name"/>
+
+
+                <Button
+                    style="@style/button_super_here"
+                    android:layout_width="match_parent"
+                    android:text="@string/comics"
+                    android:layout_marginTop="30dp" />
+
+                <Button
+                    style="@style/button_super_here"
+                    android:layout_width="match_parent"
+                    android:text="@string/stories" />
+
+                <Button
+                    style="@style/button_super_here"
+                    android:layout_width="match_parent"
+                    android:text="@string/series" />
+
+                <Button
+                    style="@style/button_super_here"
+                    android:layout_width="match_parent"
+                    android:text="@string/events"/>
+
 
             </LinearLayout>
 
@@ -87,6 +122,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/btn_go_back"
                 android:layout_width="match_parent"
                 android:layout_height="41dp"
                 android:layout_margin="20dp"
@@ -95,7 +131,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/btn_go_back"
                     style="@style/button_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
