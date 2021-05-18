@@ -205,7 +205,7 @@
                     <LinearLayout
                         android:id="@+id/proceed_to_registering"
                         android:layout_width="match_parent"
-                        android:layout_height="43dp"
+                        android:layout_height="41dp"
                         android:layout_marginBottom="16dp"
                         android:background="@drawable/rounded_button_shadow"
                         android:gravity="center"
@@ -223,7 +223,7 @@
                     <LinearLayout
                         android:id="@+id/proceed_to_gallery"
                         android:layout_width="match_parent"
-                        android:layout_height="43dp"
+                        android:layout_height="41dp"
                         android:layout_marginBottom="16dp"
                         android:background="@drawable/rounded_button_shadow"
                         android:gravity="center"

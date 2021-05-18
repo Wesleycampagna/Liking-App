@@ -24,5 +24,7 @@ public interface SuperHeroContract {
         void init();
         void updateRecyclerView();
         void filterData(String text);
+        void onBottomFinallyReached();
+        int getListSize();
     }
 }

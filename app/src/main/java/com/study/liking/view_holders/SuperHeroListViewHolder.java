@@ -1,6 +1,5 @@
 package com.study.liking.view_holders;
 
-import android.app.Activity;
 import android.content.Context;
 
 import androidx.annotation.NonNull;
@@ -8,12 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.study.liking.R;
-import com.study.liking.api.requests.CharacterDataWrapperRequest;
 import com.study.liking.api.responses.character_data_wrapper.response.CharacterResponse;
 import com.study.liking.databinding.SuperHeroAdapterBinding;
-import com.study.liking.models.User;
 import com.study.liking.utils.Constants;
-import com.study.liking.utils.FormatUtils;
 
 public class SuperHeroListViewHolder extends RecyclerView.ViewHolder {
 

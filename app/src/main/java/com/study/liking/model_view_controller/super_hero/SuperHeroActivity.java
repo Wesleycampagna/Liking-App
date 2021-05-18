@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 
+import androidx.core.widget.NestedScrollView;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.study.liking.R;
 import com.study.liking.activities.BaseActivity;
@@ -25,6 +25,7 @@ public class SuperHeroActivity extends BaseActivity implements SuperHeroContract
     private ActivitySuperHeroBinding binding;
     private SuperHeroContract.Presenter presenter;
     private SuperHeroRecyclerViewAdapter adapter;
+    private boolean canScroll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class SuperHeroActivity extends BaseActivity implements SuperHeroContract
     @Override
     protected void initActions() {
         binding.btnGoBack.setOnClickListener(v -> goBack());
+        binding.recyclerNestedScroll.setOnScrollChangeListener(onScrolled);
     }
 
     private void goBack() {
@@ -53,7 +55,7 @@ public class SuperHeroActivity extends BaseActivity implements SuperHeroContract
         adapter = new SuperHeroRecyclerViewAdapter(this, presenter);
         binding.recycler.setLayoutManager(new LinearLayoutManager(this));
         binding.recycler.setAdapter(adapter);
-        RecyclerView recyclerView = binding.recycler;
+        canScroll = true;
     }
 
     @Override
@@ -69,9 +71,9 @@ public class SuperHeroActivity extends BaseActivity implements SuperHeroContract
     @Override
     public void updateRecyclerViewAtUiThread(List<SuperHero> heroes) {
         runOnUiThread(() -> {
-            loadingIndicator(false);
             adapter.setSuperHeroes(heroes);
             adapter.notifyDataSetChanged();
+            loadingIndicator(false);
         });
     }
 
@@ -87,10 +89,10 @@ public class SuperHeroActivity extends BaseActivity implements SuperHeroContract
     public void loadingIndicator(boolean state) {
         new Handler(getMainLooper()).post(() -> {
             if (state) {
-                binding.recyclerContainer.setVisibility(View.GONE);
+                binding.recyclerNestedScroll.setVisibility(View.GONE);
                 binding.loadingComponent.loading.setVisibility(View.VISIBLE);
             } else {
-                binding.recyclerContainer.setVisibility(View.VISIBLE);
+                binding.recyclerNestedScroll.setVisibility(View.VISIBLE);
                 binding.loadingComponent.loading.setVisibility(View.GONE);
             }
         });
@@ -100,4 +102,14 @@ public class SuperHeroActivity extends BaseActivity implements SuperHeroContract
     public void showToast(String message) {
         super.showToast(message);
     }
+
+    private NestedScrollView.OnScrollChangeListener onScrolled = new NestedScrollView.OnScrollChangeListener() {
+        @Override
+        public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+            if (binding.loadingComponent.loading.getVisibility() != View.VISIBLE && scrollY == v.getChildAt(0).getMeasuredHeight() - v.getMeasuredHeight()) {
+                SuperHeroActivity.this.loadingIndicator(true);
+                presenter.onBottomFinallyReached();
+            }
+        }
+    };
 }

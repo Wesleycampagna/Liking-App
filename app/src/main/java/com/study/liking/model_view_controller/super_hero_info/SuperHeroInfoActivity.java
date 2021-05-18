@@ -2,7 +2,6 @@ package com.study.liking.model_view_controller.super_hero_info;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.study.liking.R;

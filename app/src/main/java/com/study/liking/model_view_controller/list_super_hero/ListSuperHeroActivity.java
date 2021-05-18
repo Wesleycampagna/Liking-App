@@ -59,10 +59,10 @@ public class ListSuperHeroActivity extends BaseActivity implements ListSuperHero
     public void loadingIndicator(boolean state) {
         new Handler(getMainLooper()).post(() -> {
             if (state) {
-                binding.recyclerContainer.setVisibility(View.GONE);
+                binding.recyclerNestedScroll.setVisibility(View.GONE);
                 binding.loadingComponent.loading.setVisibility(View.VISIBLE);
             } else {
-                binding.recyclerContainer.setVisibility(View.VISIBLE);
+                binding.recyclerNestedScroll.setVisibility(View.VISIBLE);
                 binding.loadingComponent.loading.setVisibility(View.GONE);
             }
             binding.containerErrorRequest.setVisibility(View.GONE);
@@ -72,7 +72,7 @@ public class ListSuperHeroActivity extends BaseActivity implements ListSuperHero
     @Override
     public void loadError() {
         new Handler(getMainLooper()).post(() -> {
-            binding.recyclerContainer.setVisibility(View.GONE);
+            binding.recyclerNestedScroll.setVisibility(View.GONE);
             binding.loadingComponent.loading.setVisibility(View.GONE);
             binding.containerErrorRequest.setVisibility(View.VISIBLE);
 

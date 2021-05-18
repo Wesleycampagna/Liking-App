@@ -89,7 +89,7 @@
             </RelativeLayout>
 
             <androidx.core.widget.NestedScrollView
-                android:id="@+id/recycler_container"
+                android:id="@+id/recycler_nested_scroll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="120dp"
@@ -148,7 +148,7 @@
             <LinearLayout
                 android:id="@+id/proceed_to_registering"
                 android:layout_width="match_parent"
-                android:layout_height="43dp"
+                android:layout_height="41dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="16dp"
@@ -168,7 +168,7 @@
             <LinearLayout
                 android:id="@+id/btn_go_back"
                 android:layout_width="match_parent"
-                android:layout_height="43dp"
+                android:layout_height="41dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="16dp"

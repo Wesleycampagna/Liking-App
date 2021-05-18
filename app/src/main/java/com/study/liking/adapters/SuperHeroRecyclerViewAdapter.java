@@ -2,7 +2,6 @@ package com.study.liking.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -21,14 +20,20 @@ public class SuperHeroRecyclerViewAdapter extends RecyclerView.Adapter<SuperHero
     private Context context;
     private OnEditSuperHeroListener onHeroEdit;
     private List<SuperHero> superHeroes;
+    private boolean canScroll;
 
     public SuperHeroRecyclerViewAdapter(Context context, OnEditSuperHeroListener onHeroEdit) {
         this.context = context;
         this.onHeroEdit = onHeroEdit;
+        this.canScroll = true;
     }
 
     public void setSuperHeroes(List<SuperHero> superHeroes) {
         this.superHeroes = superHeroes;
+    }
+
+    public void setState(boolean canScroll) {
+        this.canScroll = canScroll;
     }
 
     @NonNull
@@ -45,7 +50,7 @@ public class SuperHeroRecyclerViewAdapter extends RecyclerView.Adapter<SuperHero
         holder.bind(hero, context);
 
         SuperHeroAdapterBinding binding = holder.getBinding();
-        binding.imageView.setImageResource(R.drawable.ic_baseline_edit_24);
+        binding.imageView.setImageResource(R.drawable.ic_baseline_info_24);
         setActions(binding, hero);
     }
 

@@ -36,7 +36,24 @@ public class SuperHero extends Model {
     @Column("image_extension")
     public String imageExtension;
 
+    @Column("off_set")
+    public int offSet;
+
+    @Column("count")
+    public int count;
+
+    @Column("total")
+    public int total;
+
     public static List<SuperHero> findAll() {
+        CursorList<SuperHero> cursorList = Query.many(SuperHero.class, " SELECT * FROM super_hero ", true).get();
+        List<SuperHero> superHeroes = cursorList.asList();
+        cursorList.close();
+        return superHeroes;
+    }
+
+    public static List<SuperHero> findAllByOffsetAndQuantity(int offset, int quantity) {
+        // TODO-wesley edit here
         CursorList<SuperHero> cursorList = Query.many(SuperHero.class, " SELECT * FROM super_hero ", true).get();
         List<SuperHero> superHeroes = cursorList.asList();
         cursorList.close();

@@ -1,8 +1,5 @@
 package com.study.liking.activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,10 +8,10 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
-import com.study.liking.R;
-import com.study.liking.listeners.OnWaitingListener;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Date;
+import com.study.liking.listeners.OnWaitingListener;
 
 public abstract class BaseActivity extends AppCompatActivity {
 

@@ -3,6 +3,7 @@ package com.study.liking.utils;
 public class Constants {
 
     public static final String IMAGE_PATH = "/portrait_medium.";
+    public static final int QUANTITY_ITEM_LIST = 20;
 
     public static final class RequestCodes {
         public static final int REQUEST_AUTH_SOCIAL_MEDIA_EMAIL = 1;

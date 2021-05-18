@@ -2,7 +2,6 @@ package com.study.liking.utils;
 
 import android.util.Log;
 
-import com.google.gson.Gson;
 import com.study.liking.models.Debug;
 
 public class FileUtils {

@@ -9,13 +9,4 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
-    <style name="secondary_theme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:textColorPrimary">@color/label_color</item>
-        <item name="android:windowBackground">@color/primary_color</item>
-        <item name="android:navigationBarColor">@color/primary_color</item>
-        <item name="colorPrimary">@color/primary_color</item>
-        <item name="colorPrimaryDark">@color/background_secondary_color</item>
-        <item name="android:windowLightStatusBar">false</item>
-    </style>
-
 </resources>

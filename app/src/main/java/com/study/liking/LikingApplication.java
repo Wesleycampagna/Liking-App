@@ -6,6 +6,7 @@ import com.study.liking.migrations.CreateDebugMigration;
 import com.study.liking.migrations.CreateOwnUserMigration;
 import com.study.liking.migrations.CreateSuperHeroMigration;
 import com.study.liking.migrations.CreateUserMigration;
+import com.study.liking.migrations.UpdateSuperHero1Migration;
 import com.study.liking.utils.DateSerializerSprinkles;
 import com.study.liking.utils.IntegerTypeSerializer;
 
@@ -30,5 +31,6 @@ public class LikingApplication extends Application {
         sprinkles.addMigration(new CreateUserMigration());
         sprinkles.addMigration(new CreateDebugMigration());
         sprinkles.addMigration(new CreateSuperHeroMigration());
+        sprinkles.addMigration(new UpdateSuperHero1Migration());
     }
 }

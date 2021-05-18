@@ -86,7 +86,7 @@
             </LinearLayout>
 
             <androidx.core.widget.NestedScrollView
-                android:id="@+id/recycler_container"
+                android:id="@+id/recycler_nested_scroll"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/edit_text_color">
@@ -95,6 +95,7 @@
                     android:id="@+id/recycler"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:nestedScrollingEnabled="false"
                     tools:listitem="@layout/super_hero_adapter" />
 
             </androidx.core.widget.NestedScrollView>
@@ -114,12 +115,13 @@
             android:layout_alignParentBottom="true"
             android:background="@drawable/corner_radius_at_top"
             android:gravity="bottom"
+            android:visibility="visible"
             android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/btn_go_back"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="41dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/rounded_button_shadow"
                 android:gravity="center"

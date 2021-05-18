@@ -1,10 +1,5 @@
 package com.study.liking.models;
 
-import android.os.Parcelable;
-
-import com.study.liking.utils.MaskUtils;
-import com.study.liking.utils.Utils;
-
 import java.io.Serializable;
 import java.util.List;
 
