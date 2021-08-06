@@ -1,28 +1,38 @@
 ## TASK 05
 
-Essa tarefa consiste em tratar da identidade do app. 
+Essa tarefa consiste em transmitir informações de uma tela para outra;
 
 #### Tarefas inclusas:
 
-##### Inserir uma tela de Splash Screen confor UX do adobe XD:
+##### Trasmitir informações entre telas:
 
-Deve ser inserida uma tela inicial de Splash Screen simples com _`delay`_ de exibição de 1.5s (espera até a tela principal aparecer - tela anteriormente criada);
+- Criar layout básico para a tela de Super Hero (no adobe XD corresponde a tela _`5 - simple API Call`_)
 
-- Criar a tela;
+- Enviar por meio da Intent as informações listadas abaixo em um _Bundle fechado_ ou em _propriedades de Extra_;
+    - Primeiro nome;
+    - email;
+    - login
 
-- Criar transição;
-
-- Chamar a _**intent**_ para a outra tela;
+- na tela _`5 - simple API Call`_ recuperar os valores passados e usar no header como no exemplo do adobe XD;
 
 ##### Observações:
 
-- Será necessário editar o Android Manifest;
+Atente-se a como está configurado o Header da tela _`5 - simple API Call`_, exemplo `Olá, primeiro nome`. 
 
-- Para fazer o _`delay de exibição`_ será necessário utilizar um _`Handler`_ que será explicado mais a frente na tarefa de **número 10** que vai explicar o que é a _**`UiMainThread`**_ e as formas de acessa-la (muito importante).
-O _`Handler`_ faz parte dos recursos de acesso a esta Thread. Por hora Adicione o código abaixo para atribuir o delay de exibição;
+Se possível controle fluxos de erro como os parâmetros da Intent não serem passados;
 
-```java
-    new Handler(Looper.myLooper()).postDelayed(this::<function>, <tempo>);
-``` 
+#### Links de ajuda: 
 
-Onde **`function`** deve ser substítuida pela função que encaminha para a tela principal e **`tempo`** é o tempo de 1.5s em milisegundos; 
+[how to pass parameters between activities - Stack OverFlow](https://stackoverflow.com/questions/2091465/how-do-i-pass-data-between-activities-in-android-application)
+
+[putExtra parcelable doc](https://developer.android.com/reference/android/content/Intent#putExtra(java.lang.String,%20android.os.Parcelable))
+
+[putExtra bundle doc](https://developer.android.com/reference/android/content/Intent#putExtra(java.lang.String,%20android.os.Bundle))
+
+[putExtra int doc](https://developer.android.com/reference/android/content/Intent#putExtra(java.lang.String,%20int))
+
+[putExtra double doc](https://developer.android.com/reference/android/content/Intent#putExtra(java.lang.String,%20double))
+
+[putExtra string doc](https://developer.android.com/reference/android/content/Intent#putExtra(java.lang.String,%20java.lang.String))
+
+[putExtra boolean doc](https://developer.android.com/reference/android/content/Intent#putExtra(java.lang.String,%20boolean))
