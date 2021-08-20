@@ -11,6 +11,7 @@ Repositório simples para entendimento dos principais conceitos de android alem 
 - Não falar mal da pessoa que vos escreve isto;
 - Se for utilizar como portfólio pessoal não esquecer dos créditos.
 
+
 ### Padrões de código sugeridos
 
 - Todas as **strings**, quando não afetarem o comportamento, devem ser declarado em um arquivo _`strings.xml`_;
