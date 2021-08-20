@@ -12,7 +12,7 @@ Essa tarefa consiste em adicionar o *wrapper* do banco de dados SQLite chamado *
 <application ... />
     <provider
         android:name="br.com.redetendencia.pdvmobile.pdv.PROVIDER_AUTHORITY"
-        android:authorities="br.com.integrati.sprinkles_inti_library.CONTENT_PROVIDER_AUTHORITY"
+        android:authorities="the content provider"
         android:exported="false" />
 </application>
 ```

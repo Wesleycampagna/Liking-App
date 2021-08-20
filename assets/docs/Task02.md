@@ -10,11 +10,11 @@ Criar um Theme (adicionando um _`Resource`_ do tipo _style_) para a aplicação 
 
 - antes:
 
-figura antes 
+<img src="https://github.com/Wesleycampagna/Liking-App/edit/main/assets/imagesDoc/theme_default.jpg" alt="default theme" height="400">
 
 - depois:
 
-figura depois
+<img src="https://github.com/Wesleycampagna/Liking-App/edit/main/assets/imagesDoc/theme_edit_android.png" alt="template theme" height="400">
 
 - O template abaixo mostra as _`tags`_ do xml que alteram o tema geral da aplicação:
 
